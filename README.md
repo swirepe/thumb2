@@ -69,3 +69,11 @@ To use the server in the library, use the `ThumbnailServer` class in the `net` s
 Then
 
     nc localhost 9200 < cat.png > thumb-cat.png
+
+## License and Credits
+
+This project is released under the Apache v2 license.  You can read about that in LICENSE.md.  If you use it though, drop me a line?  I'd like to know how it works for you.
+
+This project uses the excellent [Google Guava](https://code.google.com/p/guava-libraries/) library, which is also under the Apache v2 license.
+
+
