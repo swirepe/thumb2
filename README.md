@@ -23,7 +23,9 @@ All you need is an instance of `ThumbnailerService`.  You pass it in `BufferedIm
 To use the server in the library, use the `ThumbnailServer` class in the `net` subpackage.  It's default port is **9200**, but that's a parameter.
 
 ### As a Command-line Tool
+
 Help
+
     ~/pers/thumb2  $ java -jar jar/thumb.jar --help
     Thumbnail generator - swirepe@swirepe.com
     Usage:
@@ -36,6 +38,7 @@ Help
         --silent	Disable logging.
 
 Running
+
     ~/pers/thumb2  $ java -jar jar/thumb.jar cat.png
     /home/swirepe/pers/thumb2/cat.png	Reading.
     /home/swirepe/pers/thumb2/cat.png	Submitting for processing.
@@ -57,6 +60,7 @@ Running
 ### As a Server
 
 Help
+
     ~/pers/thumb2  $ java -jar jar/thumb-server.jar --help
     Thumbnail server - swirepe@swirepe.com
     Usage:
@@ -69,6 +73,7 @@ Help
         --silent	Disable logging.
 
 Running
+
     ~/pers/thumb2  $ java -jar jar/thumb-server.jar       
     Oct 19, 2014 7:40:15 PM com.swirepe.thumb.net.ThumbnailServer run
     INFO: Server started with port = 9200, width = 100, height = 100
@@ -76,6 +81,7 @@ Running
     INFO: Listening on port 9200
         
 Then
+
     nc localhost 9200 < cat.png > thumb-cat.png
 
 ## License and Credits
