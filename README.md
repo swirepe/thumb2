@@ -4,20 +4,26 @@ Peter Swire - swirepe@swirepe.com
 
 ## What is it?
 
-I rewrote my project [thumb](https://github.com/swirepe/thumb) to be asyncronous.  It's about 7 times faster now.  I learned a lot in a year, I guess.
+I rewrote my project [thumb](https://github.com/swirepe/thumb) to be asyncronous.  It's about seven times faster now.  I learned a lot in a year, I guess.
 
 It also can behave as a server.
+
+## What does it look like?
+
+![Before](cat.png)
+
+![After](thumb-cat.png)
 
 ## Usage
 
 ### As a Library
 
-All you need is an instance of `ThumbnailerService`.  You pass it in `BufferedImage` objects and get back listenable futures.  Alternatively, you can use the `Thumbnailer` class directly.  It's a callable, so you can submit it to a theadpool and get your own futures if you want.
+All you need is an instance of `ThumbnailerService`.  You pass it in `BufferedImage` objects and get back listenable futures.  Alternatively, you can use the `Thumbnailer` class directly.  It's a callable, so you can submit it to a theadpool and get your own futures.
 
-To use the server in the library, use the `ThumbnailServer` class in the `net` subpackage.  It takes in a port along with some other parameters, but has sane defaults.
+To use the server in the library, use the `ThumbnailServer` class in the `net` subpackage.  It's default port is **9200**, but that's a parameter.
 
 ### As a Command-line Tool
-
+Help
     ~/pers/thumb2  $ java -jar jar/thumb.jar --help
     Thumbnail generator - swirepe@swirepe.com
     Usage:
@@ -29,6 +35,7 @@ To use the server in the library, use the `ThumbnailServer` class in the `net` s
         --quiet	Only report the output names, nothing else.
         --silent	Disable logging.
 
+Running
     ~/pers/thumb2  $ java -jar jar/thumb.jar cat.png
     /home/swirepe/pers/thumb2/cat.png	Reading.
     /home/swirepe/pers/thumb2/cat.png	Submitting for processing.
@@ -49,6 +56,7 @@ To use the server in the library, use the `ThumbnailServer` class in the `net` s
 
 ### As a Server
 
+Help
     ~/pers/thumb2  $ java -jar jar/thumb-server.jar --help
     Thumbnail server - swirepe@swirepe.com
     Usage:
@@ -60,6 +68,7 @@ To use the server in the library, use the `ThumbnailServer` class in the `net` s
         --no-resize	Do not resize the image before finding a thumbnail.
         --silent	Disable logging.
 
+Running
     ~/pers/thumb2  $ java -jar jar/thumb-server.jar       
     Oct 19, 2014 7:40:15 PM com.swirepe.thumb.net.ThumbnailServer run
     INFO: Server started with port = 9200, width = 100, height = 100
@@ -67,7 +76,6 @@ To use the server in the library, use the `ThumbnailServer` class in the `net` s
     INFO: Listening on port 9200
         
 Then
-
     nc localhost 9200 < cat.png > thumb-cat.png
 
 ## License and Credits
